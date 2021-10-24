@@ -1,14 +1,50 @@
-1-4
-function sumOfPos(arr: number[]) {
-  return arr.filter(num => num >= 0).reduce((acc, num) => acc + num, 0);
-}
+// 2-1 回答例
+// function myFilter<T>(arr: T[], predicate: (elm: T) => boolean): T[] | T {
+//   const result = [];
+//   for (const elm of arr) {
+//     if (predicate(elm)) {
+//       result.push(elm);
+//     }
+//   }
+//   return result;
+// }
 
-// 使用例
-const sum: number = sumOfPos([1, 3, -2, 0]);
+// // 使用例
+// const res = myFilter([1, 2, 3, 4, 5], num => num % 2 === 0);
+// const res2 = myFilter(['foo', 'hoge', 'bar'], str => str.length >= 4);
 
-// エラー例
-sumOfPos(123, 456);
-sumOfPos([123, "foobar"]);
+// // エラー例
+// myFilter([1, 2, 3, 4, 5], str => str.length >= 4);
+
+// 2-1 不正解
+// function myFilter<T>(arr: T[], predicate) {
+//   const result = [];
+//   for (const elm of arr) {
+//     if (predicate(elm)) {
+//       result.push(elm);
+//     }
+//   }
+//   return result;
+// }
+
+// // 使用例
+// const res = myFilter([1, 2, 3, 4, 5], num => num % 2 === 0);
+// const res2 = myFilter(['foo', 'hoge', 'bar'], str => str.length >= 4);
+
+// // エラー例
+// myFilter([1, 2, 3, 4, 5], str => str.length >= 4);
+
+// 1-4
+// function sumOfPos(arr: number[]) {
+//   return arr.filter(num => num >= 0).reduce((acc, num) => acc + num, 0);
+// }
+
+// // 使用例
+// const sum: number = sumOfPos([1, 3, -2, 0]);
+
+// // エラー例
+// sumOfPos(123, 456);
+// sumOfPos([123, "foobar"]);
 
 // 1-3
 // type IsPositiveFunc = (num: number) => boolean
