@@ -1,3 +1,64 @@
+// 2-5 不正解
+// 回答例
+/** 2-5. useState */
+// type setStateArgs<T> = T | ((prev: T) => T);
+// type setState<T> = (updater: setStateArgs<T>) => void;
+// declare function useState<T>(initial: T): [T, setState<T>];
+// // 使用例
+// // number型のステートを宣言 (numStateはnumber型)
+// const [numState, setNumState] = useState(0);
+// // setNumStateは新しい値で呼び出せる
+// setNumState(3);
+// // setNumStateは古いステートを新しいステートに変換する関数を渡すこともできる
+// setNumState((state) => state + 10);
+
+// // 型引数を明示することも可能
+// const [anotherState, setAnotherState] = useState<number | null>(null);
+// setAnotherState(100);
+
+// // エラー例
+// setNumState("foobar");
+
+// 2-4 不正解
+// function giveId(obj) {
+//   const id = "本当はランダムがいいけどここではただの文字列";
+//   return {
+//     ...obj,
+//     id
+//   };
+// }
+
+// 回答例
+// function giveId<T>(obj: T): T & { id: string } {
+//   const id = "本当はランダムがいいけどここではただの文字列";
+//   return {
+//     ...obj,
+//     id
+//   };
+// }
+
+// // 使用例
+// const obj1: {
+//   id: string;
+//   foo: number;
+// } = giveId({ foo: 123 });
+// const obj2: {
+//   id: string;
+//   num: number;
+//   hoge: boolean;
+// } = giveId({
+//   num: 0,
+//   hoge: true
+// });
+
+// // エラー例
+// const obj3: {
+//   id: string;
+//   piyo: string;
+// } = giveId({
+//   foo: "bar"
+// });
+
 // 2-3
 // declare function addEventListener(
 //   str: string,
