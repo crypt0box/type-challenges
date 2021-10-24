@@ -1,3 +1,27 @@
+// 2-3
+// declare function addEventListener(
+//   str: string,
+//   func: () => {},
+//   obj?: { capture?: boolean; once?: boolean; passive?: boolean } | boolean
+// );
+
+// // 使用例
+// addEventListener("foobar", () => {});
+// addEventListener("event", () => {}, true);
+// addEventListener("event2", () => {}, {});
+// addEventListener("event3", () => {}, {
+//   capture: true,
+//   once: false,
+// });
+
+// // エラー例
+// addEventListener("foobar", () => {}, "string");
+// addEventListener("hoge", () => {}, {
+//   capture: true,
+//   once: false,
+//   excess: true,
+// });
+
 // 2-2
 // type Speed = 'slow' | 'medium' | 'fast';
 
